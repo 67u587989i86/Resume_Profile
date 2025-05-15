@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Gupta - Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Ajay Gupta's Profile</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="profile">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Ajay Gupta">
+        <h2>I am Ajay Gupta</h2>
+        <br>
+        <p>Welcome to my personal profile website.I'm passionate about creating amazing web applications and constantly learning new technologies.
+             Feel free to explore!</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Ajay Gupta</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
