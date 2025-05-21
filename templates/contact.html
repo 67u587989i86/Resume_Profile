@@ -1,36 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Ajay Gupta</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me - Ajay Gupta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("{{ url_for('static', filename='images/th.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active,
+    nav ul li a.active{
+      color: #ff0011;
+      transform: scale(1.1);
+    }
+
+    #contact {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .contact-item img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .social-links {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    .social-links img {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    #splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#splash-screen img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+
+.splash-content h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Contact Ajay Gupta</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="contact">
-        <h2>Get in Touch</h2>
-        <br>
-        <p>If you'd like to reach out, feel free to contact me at:</p>
-        <br>
-        <p>Email: sg415218@gmail.com</p>
-        <p>ph no : 7219255340</p>
+    <div id="splash-screen">
+  <div class="splash-content">
+    <img src="{{ url_for('static', filename='images/namaste.jpeg') }}" alt="Namaste" />
+    <h2>🙏 Namaste! Welcome to My Contact Page</h2>
+  </div>
+</div>
 
-    </section>
+  <header>
+    <h1>Contact Ajay Gupta</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about" >About</a></li>
+        <li><a href="/contact" class="active" >Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2024 Ajay Gupta</p>
-    </footer>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <section id="contact">
+    <h2>📬 Get in Touch</h2>
+    <br>
+
+    <div class="contact-item">
+      <img src="{{ url_for('static', filename='images/icons/email.jpeg') }}" alt="Email">
+      <span>sg415218@gmail.com</span>
+    </div>
+
+    <div class="contact-item">
+      <img src="{{ url_for('static', filename='images/icons/phone.jpeg') }}" alt="Phone">
+      <span>+91 7219255340</span>
+    </div>
+
+    <br><br>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/ajay-gupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/linkedin.jpeg') }}" alt="LinkedIn"> LinkedIn
+      </a>
+      <a href="https://github.com/ajaygupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/github1.jpeg') }}" alt="GitHub"> GitHub
+      </a>
+      <a href="https://www.instagram.com/ajaygupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/instagram.jpeg') }}" alt="Instagram"> Instagram
+      </a>
+      <a href="https://www.facebook.com/ajaygupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/facebook.jpeg') }}" alt="Facebook"> Facebook
+      </a>
+      <a href="https://www.hackerrank.com/ajaygupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/hackerrank.jpeg') }}" alt="HackerRank"> HackerRank
+      </a>
+      <a href="https://leetcode.com/ajaygupta" target="_blank">
+        <img src="{{ url_for('static', filename='images/icons/leetcode.jpeg') }}" alt="LeetCode"> LeetCode
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Ajay Gupta</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const splash = document.getElementById('splash-screen');
+      splash.classList.add('fade-out');
+      setTimeout(() => {
+        splash.style.display = 'none';
+      }, 1000); // match fade duration
+    }, 2000); // 2 seconds splash screen
+  });
+</script>
+
 </body>
+
 </html>
