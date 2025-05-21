@@ -1,34 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ajay Gupta - Profile</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+         body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url("{{ url_for('static', filename='images/th.jpg') }}") no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+    }
+
+        header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    text-align: center;
+    position: relative; /* Important for scoping absolute position inside */
+    overflow: hidden; /* Prevents scrollbars from the GIF */
+}
+
+.bike {
+    position: absolute;
+    top: 0.1px; /* Adjust as needed to overlap or cut through heading */
+    right: -200px; /* Start off-screen to the right */
+    z-index: 5;
+    animation: ride-left 8s linear infinite;
+}
+
+.bike-img {
+    width: 167px;  /* Increased size */
+    height: auto;
+}
+
+@keyframes ride-left {
+    0% {
+        right: -150px;
+    }
+    100% {
+        right: 100vw;
+        transform: translateX(-50vw); /* Moves far to the left */
+    }
+}
+
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+  .profile-images {
+    display: flex;
+    justify-content: center;
+    gap: 2cm; /* Gap between images */
+    margin-bottom: 1rem;
+}
+
+.profile-images img {
+    width: 200px;
+    height: 200px; /* 3:4 aspect ratio */
+    border: 3px solid #c51010;
+    border-radius: 0 !important; /* Square edges */
+    object-fit: cover;
+}
+
+
+        #skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .skill-box {
+            background-color: rgba(15, 0, 0, 0.768);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            width: 130px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 12px rgba(239, 5, 5, 0.753);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+        }
+
+        nav ul li a:hover , nav ul li a.active {
+      color: #ff0011;
+      transform: scale(1.1);
+    }
+
+        
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Ajay Gupta's Profile</h1>
+        
+        <div class="bike">
+            <img src="{{ url_for('static', filename='images/3d-bike.gif') }}" alt="3D Bike" class="bike-img">
+        </div>
+
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="active">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section id="profile">
-        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Ajay Gupta">
-        <h2>I am Ajay Gupta</h2>
-        <br>
-        <p>Welcome to my personal profile website.I'm passionate about creating amazing web applications and constantly learning new technologies.
-             Feel free to explore!</p>
+    <div class="profile-images">
+        <img src="{{ url_for('static', filename='images/profile1.jpg') }}" alt="Ajay Gupta">
+        <img src="{{ url_for('static', filename='images/profile2.jpg') }}" alt="Ajay Gupta">
+        <img src="{{ url_for('static', filename='images/profile3.jpg') }}" alt="Ajay Gupta">
+        <img src="{{ url_for('static', filename='images/profile4.jpg') }}" alt="Ajay Gupta">
+        <img src="{{ url_for('static', filename='images/profile5.jpg') }}" alt="Ajay Gupta">
+    </div>
+    <h2>I am Ajay Gupta</h2>
+    <p>Welcome to my personal profile website...
+
+        
+    </p>
+</section>
+
+
+
+    <section id="skills">
+        <div class="skill-box"><div class="skill-icon">🐍</div><div>Python</div></div>
+        <div class="skill-box"><div class="skill-icon">☕</div><div>Java (Basic)</div></div>
+        <div class="skill-box"><div class="skill-icon">🖥️</div><div>JavaScript</div></div>
+        <div class="skill-box"><div class="skill-icon">📊</div><div>Power BI</div></div>
+        <div class="skill-box"><div class="skill-icon">📈</div><div>Tableau</div></div>
+        <div class="skill-box"><div class="skill-icon">📋</div><div>Excel</div></div>
+        <div class="skill-box"><div class="skill-icon">🤖</div><div>AI / ML</div></div>
+        <div class="skill-box"><div class="skill-icon">☁️</div><div>AWS</div></div>
+        <div class="skill-box"><div class="skill-icon">🌐</div><div>HTML</div></div>
+        <div class="skill-box"><div class="skill-icon">🎨</div><div>CSS</div></div>
     </section>
 
     <footer>
         <p>© 2024 Ajay Gupta</p>
     </footer>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
