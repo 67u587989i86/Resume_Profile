@@ -1,32 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Ajay Gupta</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Ajay Gupta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("{{ url_for('static', filename='images/th.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+nav ul li a:hover , nav ul li a.active {
+      color: #ff0011;
+      transform: scale(1.1);
+    }
+    
+    #about {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>About Ajay Gupta</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>My Journey</h2>
-        <p>Here's a little about myself...</p>
-        <p>I am a web developer and software engineer with a passion for building user-friendly websites.</p>
-    </section>
+  <header>
+    <h1>About Ajay Gupta</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about" class="active">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2024 Ajay Gupta</p>
-    </footer>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <section id="about-me" style="padding: 2rem; background-color: rgba(0, 0, 0, 0.755); border-radius: 12px; margin: 2rem; color: #fff;">
+    <h2 style="text-align: justify;">👋 About Me</h2>
+    <br>
+    <p>Hi, I’m <strong>Ajay Gupta</strong>! 😊</p>
+
+    <p>I’m a tech lover and a curious learner who is always excited to explore new things in the world of technology. 💻✨</p>
+<br>
+    <p>🎓 I’m currently doing my <strong>MCA</strong> from <strong>Thakur Institute of Management Studies, Career Development & Research (TIMSCDR)</strong>.</p>
+    <p>Before this, I completed my <strong>BCA</strong> from <strong>Tilak Maharashtra Vidyapeeth, Pune University</strong>. 🎓📘</p>
+<br>
+    <p>💪 I’m a <strong>hardworking</strong> person who never gives up easily. I love learning and improving every day. I believe that small steps every day can lead to big success! 🚀📈</p>
+<br>
+    <p>🔧 I enjoy working with:</p>
+    <br>
+    <ul style="columns: 2; list-style: none; padding-left: 0;">
+        <li>🐍 Python</li>
+        <li>☕ Java (Basics)</li>
+        <li>🖥️ JavaScript</li>
+        <li>📊 Power BI</li>
+        <li>📈 Tableau</li>
+        <li>📋 Excel</li>
+        <li>🌐 HTML</li>
+        <li>🎨 CSS</li>
+        <li>🤖 AI / ML</li>
+        <li>☁️ AWS</li>
+    </ul>
+<br>
+    <p>I always try to give my best and I’m open to learning from everyone. 🌟</p>
+    <p>Let’s keep growing, keep coding, and keep chasing dreams! 🌱🔥</p>
+</section>
+
+
+  <footer>
+    <p>© 2024 Ajay Gupta</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
